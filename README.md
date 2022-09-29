@@ -3,14 +3,22 @@ Laravel projesinde redis ile cache kulanımı;
 
 .env dosyamızda vveri tabanı yapılandırmaları sonrası
 
-<code>php artisan migrate --seed</code> ile tabloları ve içinde fake verileri oluşturabilirsiniz.
+```
+php artisan migrate --seed
+``` 
+ile tabloları ve içinde fake verileri oluşturabilirsiniz.
 
-Redisi projenize eklemek için <code>composer require predis/predis</code> kullanabilirsiniz.
+Redisi projenize eklemek için 
+```
+composer require predis/predis
+```
+kullanabilirsiniz.
 
 <code>"Command 'iNCRBY' is not a registered Redis command."</code>  hatası ile karşılaşabilirsiniz.
 
-vendor/predis/predis/src/Profile/RedisProfile.php dosyasında  
-<code>strtoupper => mb_strtoupper</code> olarak değiştirin.
+***vendor/predis/predis/src/Profile/RedisProfile.php***
+dosyasında  
+`strtoupper => mb_strtoupper` olarak değiştirin.
 
 Postman üzerinden 10bin veri ile yapılan testlerde veriler;
 
